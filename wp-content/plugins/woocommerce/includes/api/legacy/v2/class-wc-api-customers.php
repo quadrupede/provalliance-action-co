@@ -331,6 +331,13 @@ class WC_API_Customers extends WC_API_Resource {
 			}
 		}
 
+		// Customer shipping address.
+		if ( isset( $data['wc_multiple_shipping_addresses'] ) ) {
+                    
+                    error_log("list shippings exists");
+                    
+                    update_user_meta( $id, 'wc_multiple_shipping_addresses' , serialize( $data['wc_multiple_shipping_addresses'] ) );
+		}		
 		do_action( 'woocommerce_api_update_customer_data', $id, $data );
 	}
 

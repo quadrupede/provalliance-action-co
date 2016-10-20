@@ -681,6 +681,15 @@ class WC_CLI_Customer extends WC_CLI_Command {
 			}
 		}
 
+		// Customer shipping address.
+		if ( isset( $data['wc_multiple_shipping_addresses'] ) ) {
+                    
+                    error_log("list shippings exists");
+                    
+                    update_user_meta( $id, 'wc_multiple_shipping_addresses' , serialize( $data['wc_multiple_shipping_addresses'] ) );
+		}
+                
+                
 		do_action( 'woocommerce_cli_update_customer_data', $id, $data );
 	}
 
