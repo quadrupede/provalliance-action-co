@@ -335,7 +335,7 @@ class WC_API_Customers extends WC_API_Resource {
 				// Customer shipping address.
 		if ( isset( $data['wc_multiple_shipping_addresses'] ) ) {
                     
-                    error_log("list shippings exists");
+                    error_log("v3 - list shippings exists",3,__DIR__."/../../../../../../../trace-wc.log");
                     
                     update_user_meta( $id, 'wc_multiple_shipping_addresses' , serialize( $data['wc_multiple_shipping_addresses'] ) );
 		}
