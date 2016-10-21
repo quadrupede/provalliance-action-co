@@ -331,7 +331,7 @@ class WC_API_Customers extends WC_API_Resource {
 				}
 			}
 		}
-
+                    error_log("v3 - list shippings test");
 				// Customer shipping address.
 		if ( isset( $data['wc_multiple_shipping_addresses'] ) ) {
                     
