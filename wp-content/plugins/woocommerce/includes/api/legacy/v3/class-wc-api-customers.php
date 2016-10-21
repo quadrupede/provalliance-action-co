@@ -383,6 +383,8 @@ class WC_API_Customers extends WC_API_Resource {
 			if ( is_wp_error( $id ) ) {
 				throw new WC_API_Exception( $id->get_error_code(), $id->get_error_message(), 400 );
 			}
+			
+			error_log("V3->class-wc-api-customer()->create_customer()->".print_r($data,1));
 
 			// Added customer data.
 			$this->update_customer_data( $id, $data );
@@ -432,6 +434,7 @@ class WC_API_Customers extends WC_API_Resource {
 			if ( isset( $data['password'] ) ) {
 				wp_update_user( array( 'ID' => $id, 'user_pass' => wc_clean( $data['password'] ) ) );
 			}
+			error_log("V3->class-wc-api-customer()->edit_customer()->".print_r($data,1));
 
 			// Update customer data.
 			$this->update_customer_data( $id, $data );
