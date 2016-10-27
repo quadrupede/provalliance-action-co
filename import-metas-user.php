@@ -4,7 +4,7 @@ $dsn = 'mysql:dbname=actionco;host=127.0.0.1';
 $user = 'actionco';
 $password = 'GaeNg6ge';
 
-print_r($_POST);
+//print_r($_POST);
 
 if(isset($_GET['user_id']) && !empty($_POST) )
 {
@@ -19,9 +19,11 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 
 	$key = "wc_multiple_shipping_addresses" ; // "_wcmca_additional_addresses";
 	$user_id = intval($_GET['user_id']);
-	$more_addresses = serialize($_POST);
+	$more_addresses = addslashes(serialize($_POST));
 	
-	echo "\n $more_addresses " ;
+	echo "\n key : $key " ;
+	echo "\n user_id : $user_id " ;
+	echo "\n more_addresses : $more_addresses " ;
 	
 	$table = " `action_co_usermeta` ";
 	$where = " `meta_key` = :key and `user_id` = :u_id " ;
@@ -48,6 +50,7 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	if(isset($red->umeta_id) && !is_null($red->umeta_id) && !empty($red->umeta_id) )
 	{
 		echo "\n update";
+		
 		$sql_recordMetas = " update $table set $set where $where limit 1 ";
 	}
 	else
