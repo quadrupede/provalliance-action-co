@@ -25,7 +25,7 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	echo "\n user_id : $user_id " ;
 	echo "\n more_addresses : $more_addresses " ;
 	
-	$table = " `action_co_usermeta` ";
+	$table = " `actionco_wp_usermeta` ";
 	$where = " `meta_key` = :key and `user_id` = :u_id " ;
 
 	
@@ -51,12 +51,12 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	{
 		echo "\n update";
 		
-		$sql_recordMetas = " update $table set $set where $where limit 1 ";
+		$sql_recordMetas = " update $table set $set where $where ";
 	}
 	else
 	{
 		echo "\n insert";
-		$sql_recordMetas = " insert into $table set $set $set_insert limit 1";
+		$sql_recordMetas = " insert into $table set $set $set_insert ";
 	}
 	
 	echo "\n $sql_recordMetas " ;
