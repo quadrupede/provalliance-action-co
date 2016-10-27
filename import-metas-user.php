@@ -1,8 +1,8 @@
 <?php
 /* Connexion à une base ODBC avec l'invocation de pilote */
-$dsn = 'mysql:dbname=provalliance_action_co;host=127.0.0.1';
-$user = 'root';
-$password = '';
+$dsn = 'mysql:dbname=actionco;host=127.0.0.1';
+$user = 'actionco ';
+$password = 'GaeNg6ge';
 
 print_r($_POST);
 
