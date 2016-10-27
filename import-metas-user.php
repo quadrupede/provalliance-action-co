@@ -19,7 +19,7 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 
 	$key = "wc_multiple_shipping_addresses" ; // "_wcmca_additional_addresses";
 	$user_id = intval($_GET['user_id']);
-	$more_addresses = addslashes(serialize($_POST));
+	$more_addresses = serialize($_POST);
 	
 	echo "\n key : $key " ;
 	echo "\n user_id : $user_id " ;
