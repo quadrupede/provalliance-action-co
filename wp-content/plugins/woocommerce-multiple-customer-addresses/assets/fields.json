@@ -1,0 +1,324 @@
+[
+    {
+        "key": "group_5757d093217f9",
+        "title": "WooCommerce Customer Multiple Addresses - Options",
+        "fields": [
+            {
+                "key": "field_5757d1431248e",
+                "label": "VAT idetification field",
+                "name": "wcmca_vat_idetification_field",
+                "type": "true_false",
+                "instructions": "You can optionally show an extra VAT identification field on billing addrese where your EU clients can enter their VAT Number.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Enable",
+                "default_value": 0
+            },
+            {
+                "key": "field_58048bcfa8c03",
+                "label": "VAT idetification field - enable required",
+                "name": "wcmca_vat_identification_enable_required",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5757d1431248e",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no": "No",
+                    "yes": "Yes"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_57a843beb8547",
+                "label": "Disable billing multiple addresses",
+                "name": "wcmca_disable_billing_multiple_addresses",
+                "type": "true_false",
+                "instructions": "Multiple addresses selection will be disabled for billing address",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0
+            },
+            {
+                "key": "field_57a843edb8548",
+                "label": "Disable shipping multiple addresses",
+                "name": "wcmca_disable_shipping_multiple_addresses",
+                "type": "true_false",
+                "instructions": "Multiple addresses selection will be disabled for shipping address",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0
+            },
+            {
+                "key": "field_57e2d9502bac1",
+                "label": "My account page - Display fields labels",
+                "name": "wcmca_my_account_page_display_fields_labels",
+                "type": "select",
+                "instructions": "By default on My Account page are listed additional addresses displaying fields with labels and content. You can optionally disable the label display for fields.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no": "No",
+                    "yes": "Yes"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_57fc8a9629c14",
+                "label": "Disable Identifier \/ Name field",
+                "name": "wcmca_disable_identifier_field",
+                "type": "select",
+                "instructions": "By default the user has to specify, during the field creation, an \"Address identifier\" that lately is used to recall the address during the checkout process. Disabling this field the address will be identified using user address data. Ex.: \"John Smith - 25012 Main Street - New York, NY, US\".",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no": "No",
+                    "yes": "Yes"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_57e443341073e",
+                "label": "Billing first and last name - disable required",
+                "name": "wcmca_billing_first_and_last_name_disable_required",
+                "type": "select",
+                "instructions": "By default billing first and last name are required field. You can disable fields to be required (useful for business users)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no": "No",
+                    "yes": "Yes"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_57e443ae1073f",
+                "label": "Shipping first and last name - disable required",
+                "name": "wcmca_shipping_first_and_last_name_disable_required",
+                "type": "select",
+                "instructions": "By default shipping first and last name are required field. You can disable fields to be required (useful for business users)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no": "No",
+                    "yes": "Yes"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_57e44500ebbbe",
+                "label": "Billing company name - enabled required",
+                "name": "wcmca_billing_company_name_enable_required",
+                "type": "select",
+                "instructions": "By default billing company name is not a required field. You can disable the field to be required (useful for business users)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no": "No",
+                    "yes": "Yes"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_57e44575ebbbf",
+                "label": "Shipping company name - enabled required",
+                "name": "wcmca_shipping_company_name_enable_required",
+                "type": "select",
+                "instructions": "By default billing company name is not a required field. You can disable the field to be required (useful for business users)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no": "No",
+                    "yes": "Yes"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
+                "key": "field_57f3630e15d0c",
+                "label": "Default address badge backgroud color",
+                "name": "wcmca_default_badge_backgroud_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#000000"
+            },
+            {
+                "key": "field_57f3637b15d0d",
+                "label": "Default address badge text color",
+                "name": "wcmca_default_badge_text_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#FFFFFF"
+            },
+            {
+                "key": "field_57e26475087f6",
+                "label": "Custom CSS rules - My account page",
+                "name": "wcmca_custom_css_rules_my_account_page",
+                "type": "textarea",
+                "instructions": "Define here your custom CSS",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_57e26509087f7",
+                "label": "Custom CSS rules - Checkout page",
+                "name": "wcmca_custom_css_rules_checkout_page",
+                "type": "textarea",
+                "instructions": "Define here your custom CSS",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-multiple-customer-addresses-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

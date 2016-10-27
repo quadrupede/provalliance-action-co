@@ -138,8 +138,6 @@ class WC_API_Customers extends WC_API_Resource {
 						AND   posts.post_type = 'shop_order'
 						AND   posts.post_status IN ( '" . implode( "','", array_keys( wc_get_order_statuses() ) ) . "' )
 					" );
-                                                
-                                    error_log(print_r($customer,1));
 
 		$customer_data = array(
 			'id'               => $customer->ID,
@@ -177,9 +175,7 @@ class WC_API_Customers extends WC_API_Resource {
 				'postcode'   => $customer->shipping_postcode,
 				'country'    => $customer->shipping_country,
 			),
-                        'others_shipping' => $customer->shipping_others,
 		);
-                error_log(print_r($customer_data,1));
 
 		return array( 'customer' => apply_filters( 'woocommerce_api_customer_response', $customer_data, $customer, $fields, $this->server ) );
 	}
@@ -365,7 +361,6 @@ class WC_API_Customers extends WC_API_Resource {
 
 		if ( 0 == $order->customer_user ) {
 
-                                    error_log(print_r($order,1));
 			// add customer data from order
 			$order_data['customer'] = array(
 				'id'               => 0,
@@ -396,7 +391,6 @@ class WC_API_Customers extends WC_API_Resource {
 					'postcode'   => $order->shipping_postcode,
 					'country'    => $order->shipping_country,
 				),
-                                'others_shipping' => $order->shipping_others,
 			);
 
 		} else {
@@ -404,8 +398,6 @@ class WC_API_Customers extends WC_API_Resource {
 			$order_data['customer'] = current( $this->get_customer( $order->customer_user ) );
 		}
 
-                error_log(print_r($order_data['customer'],1));
-                
 		return $order_data;
 	}
 

@@ -1,9 +1,5 @@
 <?php
-/* Connexion à une base ODBC avec l'invocation de pilote */
-$dsn = 'mysql:dbname=actionco;host=127.0.0.1';
-$user = 'actionco';
-$password = 'GaeNg6ge';
-
+	include "import-config-umetas.php";
 //print_r($_POST);
 
 if(isset($_GET['user_id']) && !empty($_POST) )
@@ -16,16 +12,11 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	{
 		die( 'Connexion échouée : ' . $e->getMessage());
 	}
-
-	$key = "wc_multiple_shipping_addresses" ; // "_wcmca_additional_addresses";
-	$user_id = intval($_GET['user_id']);
-	$more_addresses = serialize($_POST);
 	
 	echo "\n key : $key " ;
 	echo "\n user_id : $user_id " ;
 	echo "\n more_addresses : $more_addresses " ;
 	
-	$table = " `actionco_wp_usermeta` ";
 	$where = " `meta_key` = :key and `user_id` = :u_id " ;
 
 	

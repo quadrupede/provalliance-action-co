@@ -160,7 +160,6 @@ class WC_API_Customers extends WC_API_Resource {
 					" );
 
 		$roles = array_values( $customer->roles );
-                                    error_log(print_r($customer,1));
 
 		$customer_data = array(
 			'id'               => $customer->ID,
@@ -199,9 +198,7 @@ class WC_API_Customers extends WC_API_Resource {
 				'postcode'   => $customer->shipping_postcode,
 				'country'    => $customer->shipping_country,
 			),
-                                'others_shipping' => $customer->shipping_others,
 		);
-                error_log(print_r($customer_data,1));
 
 		return array( 'customer' => apply_filters( 'woocommerce_api_customer_response', $customer_data, $customer, $fields, $this->server ) );
 	}
@@ -333,15 +330,7 @@ class WC_API_Customers extends WC_API_Resource {
 				}
 			}
 		}
-                    error_log("v2 - list shippings test");
 
-		// Customer shipping address.
-		if ( isset( $data['wc_multiple_shipping_addresses'] ) ) {
-                    
-                    error_log("v2 - list shippings exists");
-                    
-                    update_user_meta( $id, 'wc_multiple_shipping_addresses' , serialize( $data['wc_multiple_shipping_addresses'] ) );
-		}		
 		do_action( 'woocommerce_api_update_customer_data', $id, $data );
 	}
 
@@ -385,7 +374,6 @@ class WC_API_Customers extends WC_API_Resource {
 			if ( is_wp_error( $id ) ) {
 				throw new WC_API_Exception( $id->get_error_code(), $id->get_error_message(), 400 );
 			}
-			error_log("V2->class-wc-api-customer()->create_customer()->".print_r($data,1)); // ,3,__DIR__."/../../../../../../../trace-wc.log");
 
 			// Added customer data.
 			$this->update_customer_data( $id, $data );
@@ -435,7 +423,6 @@ class WC_API_Customers extends WC_API_Resource {
 			if ( isset( $data['password'] ) ) {
 				wp_update_user( array( 'ID' => $id, 'user_pass' => wc_clean( $data['password'] ) ) );
 			}
-			error_log("V2->class-wc-api-customer()->edit_customer()->".print_r($data,1)); // ,3,__DIR__."/../../../../../../../trace-wc.log");
 
 			// Update customer data.
 			$this->update_customer_data( $id, $data );
@@ -637,7 +624,6 @@ class WC_API_Customers extends WC_API_Resource {
 
 		if ( 0 == $order->customer_user ) {
 
-                                    error_log(print_r($order,1));
 			// add customer data from order
 			$order_data['customer'] = array(
 				'id'               => 0,
@@ -668,14 +654,12 @@ class WC_API_Customers extends WC_API_Resource {
 					'postcode'   => $order->shipping_postcode,
 					'country'    => $order->shipping_country,
 				),
-                                'others_shipping' => $customer->shipping_others,
 			);
 
 		} else {
 
 			$order_data['customer'] = current( $this->get_customer( $order->customer_user ) );
 		}
-                error_log(print_r($order_data['customer'],1));
 
 		return $order_data;
 	}

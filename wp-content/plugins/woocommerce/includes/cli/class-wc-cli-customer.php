@@ -88,8 +88,6 @@ class WC_CLI_Customer extends WC_CLI_Command {
 			if ( is_wp_error( $id ) ) {
 				throw new WC_CLI_Exception( $id->get_error_code(), $id->get_error_message() );
 			}
-			
-			error_log("class-wc-cli-customer()->create()->".print_r($data,1)); //,3,__DIR__."/../../../../../trace-wc.log");
 
 			// Added customer data.
 			$this->update_customer_data( $id, $data );
@@ -478,7 +476,7 @@ class WC_CLI_Customer extends WC_CLI_Command {
 			$user = $this->get_user( $args[0] );
 			$data = $this->unflatten_array( $assoc_args );
 			$data = apply_filters( 'woocommerce_cli_update_customer_data', $data );
-			
+
 			// Customer email.
 			if ( isset( $data['email'] ) ) {
 				wp_update_user( array( 'ID' => $user['id'], 'user_email' => sanitize_email( $data['email'] ) ) );
@@ -488,8 +486,6 @@ class WC_CLI_Customer extends WC_CLI_Command {
 			if ( isset( $data['password'] ) ) {
 				wp_update_user( array( 'ID' => $user['id'], 'user_pass' => wc_clean( $data['password'] ) ) );
 			}
-			
-			error_log("class-wc-cli-customer()->update()->".print_r($data,1)) ; // ,3,__DIR__."/../../../../../trace-wc.log");
 
 			// Update customer data.
 			$this->update_customer_data( $user['id'], $data );
@@ -684,17 +680,7 @@ class WC_CLI_Customer extends WC_CLI_Command {
 				}
 			}
 		}
-                    error_log("cli - list shippings test");
 
-		// Customer shipping address.
-		if ( isset( $data['wc_multiple_shipping_addresses'] ) ) {
-                    
-                    error_log("cli - list shippings exists") ; //,3,__DIR__."/../../../../../trace-wc.log");
-                    
-                    update_user_meta( $id, 'wc_multiple_shipping_addresses' , serialize( $data['wc_multiple_shipping_addresses'] ) );
-		}
-                
-                
 		do_action( 'woocommerce_cli_update_customer_data', $id, $data );
 	}
 
