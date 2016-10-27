@@ -1,7 +1,7 @@
 <?php
 /* Connexion à une base ODBC avec l'invocation de pilote */
 $dsn = 'mysql:dbname=actionco;host=127.0.0.1';
-$user = 'actionco ';
+$user = 'actionco';
 $password = 'GaeNg6ge';
 
 print_r($_POST);
