@@ -6,7 +6,7 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 {
 	try 
 	{
-            $dbh = new PDO($dsn, $user, $password);
+            $dbh = new PDO($dsn, $user, $password ,  array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
                 
             $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); 
@@ -68,13 +68,14 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	try 
         {
             echo "\n record " ;
+            
             $sth_insert->execute();
 
             /* Récupération de la première ligne uniquement depuis le résultat */
-            $sth_insert->fetch();
+            //$sth_insert->fetch();
 
             /* L'appel suivant à closeCursor() peut être requis par quelques drivers */
-            $sth_insert->closeCursor();
+            //$sth_insert->closeCursor();
 
 	} 
 	catch (PDOException $e) 
