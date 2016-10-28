@@ -70,13 +70,6 @@ if(isset($_GET['user_id']) && !empty($_POST) )
             echo "\n record " ;
             
             $sth_insert->execute();
-
-            /* Récupération de la première ligne uniquement depuis le résultat */
-            //$sth_insert->fetch();
-
-            /* L'appel suivant à closeCursor() peut être requis par quelques drivers */
-            //$sth_insert->closeCursor();
-
 	} 
 	catch (PDOException $e) 
 	{
