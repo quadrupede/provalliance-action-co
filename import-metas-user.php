@@ -6,11 +6,16 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 {
 	try 
 	{
-		$dbh = new PDO($dsn, $user, $password);
-	} 
+            $dbh = new PDO($dsn, $user, $password);
+                
+            $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); 
+            $dbh->setAttribute(PDO::ATTR_ORACLE_NULLS , PDO::NULL_EMPTY_STRING  ); 
+            $dbh->setAttribute(PDO::ATTR_CASE , PDO::CASE_LOWER ); 
+        } 
 	catch (PDOException $e) 
 	{
-		die( 'Connexion échouée : ' . $e->getMessage());
+            die( 'Connexion échouée : ' . $e->getMessage());
 	}
 	
 	echo "\n key : $key " ;
@@ -29,13 +34,14 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	$sth_select->bindParam(':u_id', $user_id, PDO::PARAM_INT);
 	$sth_select->bindParam(':key', $key, PDO::PARAM_STR);
 
-	try {
-
-		$sth_select->execute();
-		$red = $sth_select->fetch(PDO::FETCH_OBJ);
-		
-	} catch (PDOException $e) {
-		die( 'select échouée : ' . $e->getMessage());
+	try 
+        {
+            $sth_select->execute();
+            $red = $sth_select->fetch(PDO::FETCH_OBJ);
+	} 
+        catch (PDOException $e) 
+        {
+            die( 'select échouée : ' . $e->getMessage());
 	}
 
 	if(isset($red->umeta_id) && !is_null($red->umeta_id) && !empty($red->umeta_id) )
@@ -53,25 +59,26 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	echo "\n $sql_recordMetas " ;
 
 	$sth_insert = $dbh->prepare($sql_recordMetas);
+        
 	$sth_insert->bindParam(':u_id', $user_id, PDO::PARAM_INT);
 	$sth_insert->bindParam(':key', $key, PDO::PARAM_STR);
 	$sth_insert->bindParam(':more_addresses', $more_addresses , PDO::PARAM_STR);
 
-	try {
+	try 
+        {
+            echo "\n record " ;
+            $sth_insert->execute();
 
-		echo "\n record " ;
-		$sth_insert->execute();
-		
-		/* Récupération de la première ligne uniquement depuis le résultat */
-		$sth_insert->fetch();
+            /* Récupération de la première ligne uniquement depuis le résultat */
+            $sth_insert->fetch();
 
-		/* L'appel suivant à closeCursor() peut être requis par quelques drivers */
-		$sth_insert->closeCursor();
+            /* L'appel suivant à closeCursor() peut être requis par quelques drivers */
+            $sth_insert->closeCursor();
 
 	} 
 	catch (PDOException $e) 
 	{
-		die( 'record échouée : ' . $e->getMessage());
+            die( 'record échouée : ' . $e->getMessage());
 	}
 }
 
