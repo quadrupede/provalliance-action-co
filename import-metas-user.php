@@ -8,10 +8,10 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	{
             $dbh = new PDO($dsn, $user, $password);
                 
-            //$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
-            //$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); 
+            $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); 
             //$dbh->setAttribute(PDO::ATTR_ORACLE_NULLS , PDO::NULL_EMPTY_STRING  ); 
-            //$dbh->setAttribute(PDO::ATTR_CASE , PDO::CASE_LOWER ); 
+            $dbh->setAttribute(PDO::ATTR_CASE , PDO::CASE_LOWER ); 
         } 
 	catch (PDOException $e) 
 	{
@@ -37,7 +37,7 @@ if(isset($_GET['user_id']) && !empty($_POST) )
 	try 
         {
             $sth_select->execute();
-            $red = $sth_select->fetch(PDO::FETCH_OBJ);
+            $red = $sth_select->fetch();
 	} 
         catch (PDOException $e) 
         {
