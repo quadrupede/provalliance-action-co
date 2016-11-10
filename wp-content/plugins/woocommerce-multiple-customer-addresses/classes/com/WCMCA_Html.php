@@ -448,7 +448,7 @@ class WCMCA_Html
 					if(isset($address['address_internal_name']) && $address['type'] == $type)
 					{
 						$selected = isset($address[$address['type']."_is_default_address"]) ? 'selected="selected"': "";
-						echo '<option value="'.$address_id.'" '.$selected.'>'.$address['address_internal_name'].'</option>';
+						echo '<option value="'.$address_id.'" '.$selected.'>'.$address[$type.'_country']."-".$address[$type.'_company']."-".$address[$type.'_city']."-".$address['address_internal_name'].'</option>';
 					}
 			?>
 			</select>
