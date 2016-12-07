@@ -1,0 +1,53 @@
+#dashboard_right_now .inside .sub {
+	background-color: #FAFAFA;
+	border-top: 1px solid rgba(0, 0, 0, 0.07);
+	padding: 0;
+}
+#dashboard_right_now .inside .sub .premium-upgrade-info {
+	font-size: 12px;
+    color: #000;
+    display: block;
+    padding: 10px 12px 10px;
+}
+#dashboard_right_now .inside .sub .premium-upgrade-info strong {
+	color: #006CC9;
+}
+#dashboard_right_now .inside .sub:hover {
+	box-shadow: 0 0 0 1px #006CC9 inset;
+}
+
+.premium-link {
+     color: #b17b39;
+     font-weight: 400;
+     display: block;
+}
+.premium-link:hover {
+    color: #b17b39;
+}
+#adminmenu .wp-submenu li.current a .premium-link {
+	color: #b17b39 !important;
+    font-weight: 700;
+}
+.kaira-theme-upgrade {
+	color: #b17b39;
+    font-size: 1.2em;
+}
+
+/* ---- Show / Hide Widget areas ---- */
+
+body.vogue-footer-layout-social.widgets-php #vogue-site-footer-standard {
+    display: none !important;
+}
+
+body.widgets-php .widgets-holder-wrap {
+    box-shadow: none;
+    border: 0;
+}
+
+body.widgets-php #sidebar-1,
+body.vogue-footer-layout-standard.widgets-php #vogue-site-footer-standard {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+
