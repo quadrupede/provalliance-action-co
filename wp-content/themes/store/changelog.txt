@@ -1,0 +1,65 @@
+ChangeLog
+=========
+
+Version 1.0.0.9
+
+	i) Strip Tags for Custom CSS
+	ii) Minor tag edit
+
+Version 1.0.0.7
+
+	i) Fixed an Infinite Overflow Bug in Firefox.
+
+Version 1.0.0.6
+
+	i) Fixed Bug Resulting in unable to set Categories for Featured Posts.
+	ii) Added Pro Version Information.
+	iii) Added a little Customizer styling.
+
+Version 1.0.0.5
+
+	i) Fixed Bug with WooCommerce Star Rating not displaying properly.
+
+Version 1.0.0.4
+
+	i) Added NoFollow to the Credit Link.
+	ii) Fixed a Bug with not display Sidebar 4 in Footer.
+
+Version 1.0.0.3
+	
+	i) Fixed Disappeared Menu Setting Option(Due to WP 4.4)
+	
+Version 1.0.0.2
+
+	i) Added New Skins.
+	ii) Added a Help and Support section in Customizer.
+	iii) Updated Footer Link to Point to theme.
+
+Version 1.0.0.1
+
+	i) Fixed Issues with Default Fonts
+	ii) Added Setting to Set Default WooCommerce Thumbnail Size.
+	iii) CSS Fixes.
+	iv) Fixed Search Bar Position
+	v) Fixed Layout issues
+	vi) Add More Areas to showcase Featured Content
+	vii) Minor JS Bug Fix for Coverflow
+
+Version 0.92
+
+	i) Properly Escaped all Values on Output
+	ii) Removed Redundant bootstrap's js files.
+	iii) Corrected text domain in customizer.php
+
+Version 0.91
+
+	i) Used Hooks to Avoid Overriding WooCommerce Templates.
+	ii) Used Proper Sanitization for Custom CSS in Theme Options.
+	iii) Fixed Site Title Color in Customizer.
+	iv) Added Missing text domains.
+	v) Escaped Social Icon Urls and Site Logo Img src.
+	vi) Added Unminified Version of CSS files.
+
+Version 0.9
+
+	i) Initial Release.
