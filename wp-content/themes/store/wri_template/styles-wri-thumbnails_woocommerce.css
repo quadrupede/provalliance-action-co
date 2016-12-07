@@ -1,0 +1,36 @@
+
+
+.wri-woocommerce-item-columns-2 ul.products li.product{
+	width:48%;
+}
+
+.wri-woocommerce-item-columns-3 ul.products li.product{
+	width:30.75%;
+}
+
+.wri-woocommerce-item-columns-4 ul.products li.product{
+	width: 22.05%;
+}
+
+.wri-woocommerce-item-columns-5 ul.products li.product{
+	width:16.9%;
+}
+
+
+
+
+.wri-woocommerce-specific-item-columns-2 ul.products li.product{
+	width:48% !important;
+}
+
+.wri-woocommerce-specific-item-columns-3 ul.products li.product{
+	width:30.75% !important;
+}
+
+.wri-woocommerce-specific-item-columns-4 ul.products li.product{
+	width: 22.05% !important;
+}
+
+.wri-woocommerce-specific-item-columns-5 ul.products li.product{
+	width:16.9% !important;
+}
